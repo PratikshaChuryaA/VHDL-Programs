@@ -1,0 +1,19 @@
+library ieee;
+    use ieee.std_logic_1164.all;
+    entity mux8to1 is
+        port(i:in bit_vector(7 downto 0);
+            s:in bit_vector(2 downto 0);
+            f:out bit);
+end mux8to1;
+architecture pgm of mux8to1 is
+    begin
+        with s select
+        f<= i(0) when "000",
+            i(1) when "001",
+            i(2) when "010",
+            i(3) when "011",
+            i(4) when "100",
+            i(5) when "101",
+            i(6) when "110",
+            i(7) when "111";
+end pgm;        
