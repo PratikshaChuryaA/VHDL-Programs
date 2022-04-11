@@ -1,0 +1,11 @@
+library ieee;
+    use ieee.std_logic_1164.all;
+    entity fullsub is
+        port(a,b,cin:in std_logic;
+            d,borrow:out std_logic);
+end fullsub;
+architecture pgm of fullsub is
+    begin
+        d<= a xor b xor cin;
+        borrow<= (not a and b) or (not a and cin) or (b and cin);
+end pgm;
