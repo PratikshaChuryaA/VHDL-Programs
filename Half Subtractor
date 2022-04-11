@@ -1,0 +1,11 @@
+library ieee;
+    use ieee.std_logic_1164.all;
+entity hlf_sub is
+    port(a,b:in std_logic;
+        d,borrow:out std_logic);
+    end hlf_sub;
+    architecture pgm of hlf_sub is
+        begin
+            d<= a xor b;
+            borrow<=not a and b;
+        end pgm;
